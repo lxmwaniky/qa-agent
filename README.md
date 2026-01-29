@@ -7,7 +7,6 @@ A simple AI-powered Question Answering (QA) agent built with Google ADK and Gemi
 - Built with Google ADK for easy agent development
 - Uses Gemini 3 Flash Preview model for fast responses
 - Configurable via environment variables
-- Ready for hands-on sessions and demos
 
 ## Prerequisites
 
