@@ -11,4 +11,5 @@ root_agent = Agent(
     name = "basic_agent",
     model = "gemini-3-flash-preview",
     description = "Agents that answer user questions",
+    instruction = INSTRUCTION
 )
