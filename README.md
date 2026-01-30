@@ -127,9 +127,8 @@ From Cloud Console: Go to Agent Engine page, select "API URLs", and copy the Que
 
 From gcloud:
 ```bash
-gcloud projects list
 gcloud asset search-all-resources \
-  --scope=projects/$(PROJECT_ID) \
+  --scope=projects/$PROJECT_ID \
   --asset-types='aiplatform.googleapis.com/ReasoningEngine' \
   --format="table(name,assetType,location,reasoning_engine_id)"
 ```
@@ -140,7 +139,7 @@ gcloud asset search-all-resources \
 ```bash
 curl -X GET \
   -H "Authorization: Bearer $(gcloud auth print-access-token)" \
-  "https://$(LOCATION_ID)-aiplatform.googleapis.com/v1/projects/$(PROJECT_ID)/locations/$(LOCATION_ID)/reasoningEngines"
+  "https://$LOCATION_ID-aiplatform.googleapis.com/v1/projects/$PROJECT_ID/locations/$LOCATION_ID/reasoningEngines"
 ```
 
 #### Send an Agent Request
@@ -150,8 +149,8 @@ curl -X GET \
 curl \
   -H "Authorization: Bearer $(gcloud auth print-access-token)" \
   -H "Content-Type: application/json" \
-  https://$(LOCATION_ID)-aiplatform.googleapis.com/v1/projects/$(PROJECT_ID)/locations/$(LOCATION_ID)/reasoningEngines/$(RESOURCE_ID):query \
-  -d '{"class_method": "async_create_session", "input": {"user_id": "u_123"}}'
+  https://$LOCATION_ID-aiplatform.googleapis.com/v1/projects/$PROJECT_ID/locations/$LOCATION_ID/reasoningEngines/$RESOURCE_ID:query \
+  -d '{"class_method": "async_create_session", "input": {"user_id": "lxmwaniky"}}'
 ```
 
 Extract the `session_id` from the response.
@@ -161,7 +160,7 @@ Extract the `session_id` from the response.
 curl \
   -H "Authorization: Bearer $(gcloud auth print-access-token)" \
   -H "Content-Type: application/json" \
-  https://$(LOCATION_ID)-aiplatform.googleapis.com/v1/projects/$(PROJECT_ID)/locations/$(LOCATION_ID)/reasoningEngines/$(RESOURCE_ID):query?alt=sse \
+  https://$LOCATION_ID-aiplatform.googleapis.com/v1/projects/$PROJECT_ID/locations/$LOCATION_ID/reasoningEngines/$RESOURCE_ID:query?alt=sse \
   -d '{
     "class_method": "async_stream_query",
     "input": {
