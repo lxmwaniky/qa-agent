@@ -164,7 +164,7 @@ curl \
   -d '{
     "class_method": "async_stream_query",
     "input": {
-      "user_id": "u_123",
+      "user_id": "lxmwaniky",
       "session_id": "YOUR_SESSION_ID",
       "message": "How do you say '\''I am coding'\'' in Swahili?"
     }
@@ -175,11 +175,11 @@ curl \
 
 ```python
 # Create remote session
-remote_session = await remote_app.async_create_session(user_id="u_456")
+remote_session = await remote_app.async_create_session(user_id="lxmwaniky")
 
 # Send queries
 async for event in remote_app.async_stream_query(
-    user_id="u_456",
+    user_id="lxmwaniky",
     session_id=remote_session["id"],
     message="What's the weather in New York?",
 ):
