@@ -5,3 +5,5 @@ __pycache__/
 .git/
 .env
 adk-key.json
+src/__pycache__/
+src/.adk
