@@ -9,7 +9,7 @@ When providing answers, explain your understanding of the question and respond c
 
 root_agent = Agent(
     name = "basic_agent",
-    model = "gemini-3-flash-preview",
+    model = "gemini-2.5-flash",
     description = "Agents that answer user questions",
     instruction = INSTRUCTION
 )
